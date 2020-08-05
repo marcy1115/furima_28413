@@ -25,11 +25,6 @@
 | text           | text    | null: false                    |
 | image          | text    | null: false                    |
 | price          | integer | null: false                    |
-| burden         | string  | null: false                    |
-| condition      | string  | null: false                    |
-| send           | string  | null: false                    |
-| fee            | integer | null: false                    |
-| gain           | integer | null: false                    |
 
 ### Association
 - belongs_to :users
@@ -51,12 +46,12 @@
 ## deliverys
 | Column    | Type    | Options                        |
 |-----------|---------|--------------------------------|
-| portal    | string  | null: false                    |
-| state     | string  | null: false                    |
-| city      | string  | null: false                    |
-| town      | string  | null: false                    |
-| building  | string  | null: false                    |
-| tel       | string  | null: false                    |
+| portal    | string  |                                |
+| state     | string  |                                |
+| city      | string  |                                |
+| town      | string  |                                |
+| building  | string  |                                |
+| tel       | string  |                                |
 
 ### Association
 - belongs_to :items
