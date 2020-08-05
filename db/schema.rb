@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_08_04_154531) do
     t.integer "price", null: false
     t.integer "category_id", null: false
     t.integer "quality_id", null: false
+    t.integer "burden_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

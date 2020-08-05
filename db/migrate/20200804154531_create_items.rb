@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer    :price      , null: false
       t.integer    :category_id, null: false
       t.integer    :quality_id , null: false
-      t.integer    :burden     , null: false
+      t.integer    :burden_id  , null: false
       t.timestamps 
     end
   end
