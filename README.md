@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :buys
+- has_one :buys
 
 
 ## items テーブル
@@ -25,12 +25,16 @@
 | text           | text    | null: false                    |
 | image          | text    | null: false                    |
 | price          | integer | null: false                    |
+| burden         | string  | null: false                    |
+| condition      | string  | null: false                    |
+| send           | string  | null: false                    |
 | fee            | integer | null: false                    |
 | gain           | integer | null: false                    |
 
 ### Association
-- belong_to :users
-- belong_to :buys
+- belongs_to :users
+- has_one    :buys
+- has_one    :deliverys
 
 
 ## buys テーブル
@@ -40,9 +44,8 @@
 | item_id   | integer | null: false, foreign_key: true |
 
 ### Association
-- has_many :user, through
-- has_many :items
-- has_one  :deliverys
+- belongs_to :users
+- belongs_to :items
 
 
 ## deliverys
