@@ -22,15 +22,10 @@
 |----------------|---------|--------------------------------|
 | item_name      | string  | null: false                    |
 | item_text      | text    | null: false                    |
-| category       | string  | null: false                    |
-| item_condition | string  | null: false                    |
 | item_img       | text    | null: false                    |
-| use_id         | integer | null: false, foreign_key: true |
-| buy_id         | integer | null: false, foreign_key: true |
+| price          | integer | null: false                    |
 
 ### Association
-- belongs_to :users
-- belongs_to :buys
 
 
 ## buys テーブル
