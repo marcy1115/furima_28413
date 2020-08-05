@@ -20,9 +20,9 @@
 ## items テーブル
 | Column         | Type    | Options                        |
 |----------------|---------|--------------------------------|
-| item_name      | string  | null: false                    |
-| item_text      | text    | null: false                    |
-| item_img       | text    | null: false                    |
+| name           | string  | null: false                    |
+| text           | text    | null: false                    |
+| image          | text    | null: false                    |
 | price          | integer | null: false                    |
 
 ### Association
