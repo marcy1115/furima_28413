@@ -44,14 +44,13 @@
 
 
 ## deliverys
-| Column    | Type    | Options                        |
-|-----------|---------|--------------------------------|
-| portal    | string  |                                |
-| state     | string  |                                |
-| city      | string  |                                |
-| town      | string  |                                |
-| building  | string  |                                |
-| tel       | string  |                                |
+| Column     | Type    | Options                        |
+|------------|---------|--------------------------------|
+| portal     | string  | null: false                    |
+| city       | string  | null: false                    |
+| town       | string  | null: false                    |
+| building   | string  |                                |
+| tel        | string  | null: false                    |
 
 ### Association
 - belongs_to :items

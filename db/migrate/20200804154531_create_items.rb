@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer    :quality_id   , null: false
       t.integer    :burden_id    , null: false
       t.integer    :prefecture_id, null: false
+      t.integer    :send_id      , null: false
       t.timestamps 
     end
   end
