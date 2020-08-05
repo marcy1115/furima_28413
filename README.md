@@ -31,7 +31,6 @@
 ## buys テーブル
 | Column    | Type    | Options     |
 |-----------|---------|-------------|
-| price     | integer | null: false |
 
 ### Association
 - has_many :items
@@ -42,9 +41,11 @@
 | Column    | Type    | Options                        |
 |-----------|---------|--------------------------------|
 | portal    | string  | null: false                    |
-| address   | string  | null: false                    |
+| state     | string  | null: false                    |
+| city      | string  | null: false                    |
+| town      | string  | null: false                    |
+| building  | string  | null: false                    |
 | tel       | string  | null: false                    |
-| buy_id    | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :buys
