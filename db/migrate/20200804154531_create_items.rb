@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer    :burden_id    , null: false
       t.integer    :prefecture_id, null: false
       t.integer    :send_id      , null: false
+      t.text       :comment
       t.timestamps 
     end
   end
