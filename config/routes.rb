@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "posts", to: "roots#index"
+  get "/",             to: "roots#index"
+  get "users/sign_up", to: "dedevise/registrations#new"
 end
