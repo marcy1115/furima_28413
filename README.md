@@ -21,10 +21,16 @@
 ## items テーブル
 | Column         | Type    | Options                        |
 |----------------|---------|--------------------------------|
+| user_id        | integer | null: false, foreign_key: true |
 | name           | string  | null: false                    |
 | text           | text    | null: false                    |
 | image          | text    | null: false                    |
 | price          | integer | null: false                    |
+| category_id    | integer | null: false                    |
+| quality_id     | integer | null: false                    |
+| burden_id      | integer | null: false                    |
+| prefecture_id  | integer | null: false                    |
+| send_id        | integer | null: false                    |
 
 ### Association
 - belongs_to :users
@@ -44,13 +50,14 @@
 
 
 ## deliverys
-| Column     | Type    | Options                        |
-|------------|---------|--------------------------------|
-| portal     | string  | null: false                    |
-| city       | string  | null: false                    |
-| town       | string  | null: false                    |
-| building   | string  |                                |
-| tel        | string  | null: false                    |
+| Column        | Type    | Options                        |
+|---------------|---------|--------------------------------|
+| portal        | string  | null: false                    |
+| prefecture_id | integer | null: false                    |
+| city          | string  | null: false                    |
+| town          | string  | null: false                    |
+| building      | string  |                                |
+| tel           | string  | null: false                    |
 
 ### Association
 - belongs_to :items
