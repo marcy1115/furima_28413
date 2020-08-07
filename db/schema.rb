@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_081340) do
     t.string "first_kana", null: false
     t.string "email", null: false
     t.string "password", null: false
+    t.string "password_confirmation", null: false
     t.date "birth_day", null: false
   end
 
