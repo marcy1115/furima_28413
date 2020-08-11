@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
       it 'ニックネームがnilの時' do
         @user.nick_name = nil
         @user.valid?
-        expect( @user.errors.full_messages ).to include ( "Nick name can't be blank" )
+        expect( @user.errors.full_messages ).to include( "Nick name can't be blank" )
       end
       it 'メールアドレスに＠が含まれていない時' do
         @user.email = 'abcdefg'
@@ -86,7 +86,6 @@ RSpec.describe User, type: :model do
       it '生年月日がnilの時' do
         @user.birth_day = nil
         @user.valid?
-        binding.pry
         expect( @user.errors.full_messages ).to include( "Birth day can't be blank" )
       end
     end
