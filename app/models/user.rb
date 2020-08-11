@@ -24,6 +24,4 @@ class User < ApplicationRecord
     validates :password
     validates :password_confirmation
   end
-
-  
 end
