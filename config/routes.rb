@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'items#index'
   get "users/sign_up", to: "devise/registrations#new"
   resources :users, only: [ :new ]
-  resources :items, only: [ :index, :new ]
+  resources :items, only: [ :index, :new, :create ]
 end

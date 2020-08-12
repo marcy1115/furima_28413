@@ -1,10 +1,14 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :category, :quality, :burden,
-                         :prefecture, :send
+  belongs_to_active_hash :category
+  belongs_to_active_hash :quality
+  belongs_to_active_hash :burden
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :delivery
 
-  with_options puresence: true do
-    validates :user_id, foreign_key: true
+  validates :user_id, presence: true
+
+  with_options presence: true do
     validates :name
     validates :text
     validates :image
@@ -16,7 +20,7 @@ class Item < ApplicationRecord
     validates :quality_id
     validates :burden_id
     validates :prefecture_id
-    validates :send_id
+    validates :delivery_id
   end
 
   belongs_to :users
