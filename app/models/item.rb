@@ -18,4 +18,8 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :send_id
   end
+
+  belongs_to :users
+  has_one    :buys
+  has_one    :deliverys
 end
