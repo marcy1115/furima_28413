@@ -23,7 +23,7 @@ class Item < ApplicationRecord
     validates :delivery_id
   end
 
-  belongs_to :users
+  belongs_to :user
   has_one    :buys
   has_one    :deliverys
   has_one_attached :image
