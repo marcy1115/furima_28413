@@ -1,5 +1,14 @@
 FactoryBot.define do
   factory :item do
-    
+    user_id       { '1' }
+    name          { Faker::Name.initials( number: 40 ) }
+    text          { Faker::Lorem.characters(number: 1000 ) }
+    image         { '/assets/images/camera.png' }
+    price         { '9999999' }
+    category_id   { '2' }
+    quality_id    { '2' }
+    burden_id     { '2' }
+    prefecture_id { '2' }
+    send_id       { '2' }
   end
 end
