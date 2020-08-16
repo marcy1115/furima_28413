@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configre_permitted_parameters, if: :devise_controller?
-  
+
   private
 
   def configre_permitted_parameters
@@ -9,6 +9,4 @@ class ApplicationController < ActionController::Base
                        :first_name_kana, :last_name_kana, :birth_day]
     )
   end
-
-
 end
