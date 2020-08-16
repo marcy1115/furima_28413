@@ -9,13 +9,13 @@ class Item < ApplicationRecord
   validates :user_id, presence: true
 
   with_options presence: true do
-    validates :name
-    validates :text
-    validates :image
-    validates :price
+    validates :name,  length: { maximum:      40 }
+    validates :text,  length: { maximum:    1000 }
+    validates :price, numericality: { greater_than_or_equal_to: 300,
+                                      less_than_or_equal_to: 9999999 } 
   end
 
-  with_options presence: true, numericality: {other_than: 1 } do
+  with_options presence: true, numericality: { other_than: 1 } do
     validates :category_id
     validates :quality_id
     validates :burden_id
