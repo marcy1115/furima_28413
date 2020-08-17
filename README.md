@@ -19,18 +19,18 @@
 
 
 ## items テーブル
-| Column         | Type    | Options                        |
-|----------------|---------|--------------------------------|
-| user_id        | references | null: false, foreign_key: true |
-| name           | string  | null: false                    |
-| text           | text    | null: false                    |
-| image          | text    | null: false                    |
-| price          | integer | null: false                    |
-| category_id    | integer | null: false                    |
-| quality_id     | integer | null: false                    |
-| burden_id      | integer | null: false                    |
-| prefecture_id  | integer | null: false                    |
-| send_id        | integer | null: false                    |
+| Column         | Type       | Options                        |
+|----------------|------------|--------------------------------|
+| user           | references | null: false, foreign_key: true |
+| name           | string     | null: false                    |
+| text           | text       | null: false                    |
+| image          | text       | null: false                    |
+| price          | integer    | null: false                    |
+| category_id    | integer    | null: false                    |
+| quality_id     | integer    | null: false                    |
+| burden_id      | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| send_id        | integer    | null: false                    |
 
 ### Association
 - belongs_to :users
