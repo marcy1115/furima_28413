@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :edit, :update, :destroy]
 
   def index
-    @items = Item.order('created_at DESC')
+    @items = Item.all
   end
 
   def new
