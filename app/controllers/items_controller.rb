@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_login, only: [:new, :edit, :update, :destroy]
+  before_action :move_to_login, only: [ :new, :create ]
 
   def index
     @items = Item.all
