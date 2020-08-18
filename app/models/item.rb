@@ -11,7 +11,7 @@ class Item < ApplicationRecord
     validates :name,   length: { maximum: 40 }
     validates :text,   length: { maximum: 1000 }
     validates :price,  numericality: { greater_than_or_equal_to: 300,
-                                      less_than_or_equal_to: 9_999_999 }
+                                       less_than_or_equal_to: 9_999_999 }
   end
 
   with_options presence: true, numericality: { other_than: 1 } do
