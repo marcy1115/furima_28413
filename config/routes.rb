@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
 
   resources :users, only: [ :new ]
-  resources :items, only: [ :index, :new, :create, :show]
+  resources :items, only: [ :index, :new, :create, :show, :destroy ]
   resources :items do
     member do
       get "item", to: "items#show"
