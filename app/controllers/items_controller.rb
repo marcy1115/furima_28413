@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.all
@@ -20,13 +21,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to root_path
+    begin 
+      @item.destroy
+      redirect_to root_path
+    rescue => exception
+      redirect_to root_path
+    end
   end
 
   private
@@ -41,5 +44,9 @@ class ItemsController < ApplicationController
 
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
