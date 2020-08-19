@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit]
 
   def index
     @items = Item.all
@@ -23,6 +23,9 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def destroy
     begin 
       @item.destroy
@@ -35,7 +38,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :text, :image, :price,
+    params.require(:item).permit(:image, :name, :text, :price,
                                  :category_id, :quality_id, :burden_id,
                                  :prefecture_id, :delivery_id).merge(
                                    user_id: current_user.id
