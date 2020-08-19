@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :destroy, :edit]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.all
@@ -27,12 +27,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    begin 
-      @item.destroy
-      redirect_to root_path
-    rescue => exception
-      redirect_to root_path
-    end
+    @item.destroy
+    redirect_to root_path
+  rescue StandardError => e
+    redirect_to root_path
+  end
+
+  def update
+    @item.update(item_params)
+    redirect_to root_path
+  rescue StandardError => e
+    redirect_to root_path
   end
 
   private
