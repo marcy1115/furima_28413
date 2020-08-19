@@ -27,17 +27,25 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
-  rescue StandardError => e
-    redirect_to root_path
+    begin
+      @item.destroy
+      redirect_to root_path
+    rescue StandardError => e
+      redirect_to root_path
+    end
   end
 
   def update
-    @item.update(item_params)
-    redirect_to root_path
-  rescue StandardError => e
-    redirect_to root_path
+    begin
+      @item.update(item_params)
+      if @item.save
+        redirect_to root_path
+      else
+        render :edit
+      end
+    rescue StandardError => e
+      redirect_to root_path
+    end
   end
 
   private
