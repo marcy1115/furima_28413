@@ -49,7 +49,7 @@
 - belongs_to :items
 
 
-## deliverys
+## destination
 | Column        | Type    | Options                        |
 |---------------|---------|--------------------------------|
 | portal        | string  | null: false                    |
