@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   get  "users/sign_up", to: "devise/registrations#new"
   get "items/new",    to: "items#new"
   
-
   resources :users, only: [ :new ]
   resources :items
   resources :items do
     member do
       get "item", to: "items#show"
+      resources :buys, only:[ :index ]
     end
-  end 
+  end
 end
