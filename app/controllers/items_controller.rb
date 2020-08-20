@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.all
@@ -20,22 +20,28 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
-    begin 
+    begin
       @item.destroy
       redirect_to root_path
-    rescue => exception
+    rescue StandardError => e
       redirect_to root_path
+    end
+  end
+
+  def update
+    @item.update(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :text, :image, :price,
+    params.require(:item).permit(:image, :name, :text, :price,
                                  :category_id, :quality_id, :burden_id,
                                  :prefecture_id, :delivery_id).merge(
                                    user_id: current_user.id
