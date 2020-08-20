@@ -20,12 +20,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def destroy
     begin
       @item.destroy
@@ -36,15 +30,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    begin
-      @item.update(item_params)
-      if @item.save
-        redirect_to root_path
-      else
-        render :edit
-      end
-    rescue StandardError => e
+    @item.update(item_params)
+    if @item.save
       redirect_to root_path
+    else
+      render :edit
     end
   end
 
