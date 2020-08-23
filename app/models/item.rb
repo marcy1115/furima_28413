@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   end
 
   belongs_to :user
-  has_one    :buys
-  has_one    :deliverys
+  has_one    :buy
+  has_one    :delivery
   has_one_attached :image
 end

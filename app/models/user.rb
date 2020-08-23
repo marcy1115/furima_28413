@@ -31,5 +31,5 @@ class User < ApplicationRecord
   end
 
   has_many :items
-  has_one  :buys
+  has_one  :buy
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "item", to: "items#show"
-      resources :buys, only:[ :index ]
+      resources :buys, only:[ :index, :create ]
     end
   end
 end

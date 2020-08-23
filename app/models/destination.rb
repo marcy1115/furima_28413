@@ -12,5 +12,5 @@ class Destination < ApplicationRecord
     validates :tel,    format: { with: tel }
   end
 
-  belongs_to :items
+  belongs_to :buy
 end
