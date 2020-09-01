@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @items = Item.order('created_at DESC')
-  
   end
 
   def new
@@ -22,12 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    begin
-      @item.destroy
-      redirect_to root_path
-    rescue StandardError => e
-      redirect_to root_path
-    end
+    @item.destroy
+    redirect_to root_path
+  rescue StandardError => e
+    redirect_to root_path
   end
 
   def update

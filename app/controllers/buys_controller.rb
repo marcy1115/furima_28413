@@ -1,4 +1,5 @@
 class BuysController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
   before_action :buy_wall, only: [:index]
 
   def index
@@ -41,7 +42,7 @@ class BuysController < ApplicationController
 
   def buy_wall
     @item = Item.find(params[:id])
-    unless current_user.id != @item.id && user_signed_in? #商品投稿ユーザーとログインユーザーが不一致、ログイン済みなら unless内を読みこむ
+    unless current_user.id != @item.user_id && user_signed_in? 
       redirect_to root_path
     end
   end
