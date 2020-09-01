@@ -1,9 +1,9 @@
 class BuysController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :buy_wall, only: [:index]
+  before_action :item_find, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:id])
     @buy = BuyForm.new(order_params)
   end
 
@@ -11,7 +11,6 @@ class BuysController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:id])
     @buy = BuyForm.new(order_params)
     if @buy.valid?
       pay_item
@@ -45,5 +44,9 @@ class BuysController < ApplicationController
     unless current_user.id != @item.user_id && user_signed_in? 
       redirect_to root_path
     end
+  end
+
+  def item_find
+    @item = Item.find(params[:id])
   end
 end
