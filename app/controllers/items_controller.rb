@@ -21,12 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    begin
-      @item.destroy
-      redirect_to root_path
-    rescue StandardError => e
-      redirect_to root_path
-    end
+    @item.destroy
+    redirect_to root_path
+  rescue StandardError => e
+    redirect_to root_path
   end
 
   def update
@@ -43,7 +41,7 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:image, :name, :text, :price,
                                  :category_id, :quality_id, :burden_id,
-                                 :prefecture_id, :delivery_id).merge(
+                                 :prefecture_id, :delivery_id, :sold).merge(
                                    user_id: current_user.id
                                  )
   end
