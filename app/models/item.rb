@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery
 
   with_options presence: true do
+    validates :image
     validates :user_id
     validates :name,   length: { maximum: 40 }
     validates :text,   length: { maximum: 1000 }
