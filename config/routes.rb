@@ -13,5 +13,5 @@ Rails.application.routes.draw do
       get "buys", to: "buys#index"
       resources :buys, only: [ :index, :create]
     end
-  end 
+  end
 end
